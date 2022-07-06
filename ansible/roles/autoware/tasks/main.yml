@@ -10,7 +10,7 @@
   command: rosdep update
   become: yes
   
- - name: Autoware (remove Multiple packages )
+- name: Autoware (remove Multiple packages )
   command: "rm -rf {{ WORKSPACE_ROOT }}/src/description/sensor/sensor_component_description/velodyne_description"
   become: yes 
 
