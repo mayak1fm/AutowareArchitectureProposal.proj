@@ -11,7 +11,7 @@ RUN --mount=type=ssh \
   mkdir src \
   && vcs import src < autoware.proj.repos \
   && source /opt/ros/galactic/setup.bash \
-  && colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+  && colcon build --continue-on-error --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 ## Change permission for runtime data conversion
 RUN find /autoware/install -type d -exec chmod 777 {} \;
