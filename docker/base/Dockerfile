@@ -28,7 +28,9 @@ RUN --mount=type=ssh \
   && git clone git@github.com:mayak1fm/AutowareArchitectureProposal.proj.git -b main /tmp/autoware.proj \
   && cd /tmp/autoware.proj \
   && mkdir src \
-  && vcs import src < autoware.proj.repos \
+  && vcs import src < autoware.proj.repos
+RUN ansible-playbook "$SCRIPT_DIR/ansible/playbook_ros2.yml"
+RUN cd /tmp/autoware.proj \ 
   && ./setup_ubuntu20.04.sh -c \
   && rm -rf /tmp/autoware.proj \
   && apt-get clean \
