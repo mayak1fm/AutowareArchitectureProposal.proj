@@ -15,11 +15,11 @@
   become: yes
   
 - name: Autoware (clone tier_4_msgs )
-  command: "git clone git@github.com:tier4/tier4_autoware_msgs.git  {{ WORKSPACE_ROOT }}/src"
+  command: "mkdir {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs && git clone git@github.com:tier4/tier4_autoware_msgs.git {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs"
   become: yes
 
 - name: Autoware (vcs import tier_4_msgs_dpends)
-  command: "vcs import {{ WORKSPACE_ROOT }}/src < {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs/build_depends.repos"
+  command: "vcs import {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs < {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs/build_depends.repos"
   become: yes
 
 - name: Autoware (rosdep install dependencies)
