@@ -29,7 +29,7 @@ RUN --mount=type=ssh \
   && cd /tmp/autoware.proj \
   && mkdir src \
   && vcs import src < autoware.proj.repos
-RUN ansible-playbook "$SCRIPT_DIR/ansible/playbook_ros2.yml"
+RUN cd /tmp/autoware.proj && ansible-playbook "$SCRIPT_DIR/ansible/playbook_ros2.yml"
 RUN cd /tmp/autoware.proj \ 
   && ./setup_ubuntu20.04.sh -c \
   && rm -rf /tmp/autoware.proj \
