@@ -23,7 +23,7 @@
   become: yes
 
 - name: Autoware (vcs import tier_4_msgs_dpends)
-  command: "vcs import {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs < {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs/build_depends.repos"
+  command: "vcs import {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs/ < {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs/build_depends.repos"
   become: yes
 
 - name: Autoware (rosdep install dependencies)
