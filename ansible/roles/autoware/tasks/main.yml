@@ -8,15 +8,7 @@
  
 - name: Autoware (remove Multiple packages )
   command: "rm -rf {{ WORKSPACE_ROOT }}/src/description/sensor/sensor_component_description/velodyne_description"
-  become: yes
-  
-- name: Autoware (clone tier_4_msgs )
-  command: "mkdir {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs"
-  become: yes
-  
-- name: Autoware (clone tier_4_msgs )
-  command: "git clone git@github.com:tier4/tier4_autoware_msgs.git {{ WORKSPACE_ROOT }}/src/tier4_autoware_msgs"
-  become: yes
+  become: yes  
   
 - name: Autoware (update rosdep)
   command: rosdep update
