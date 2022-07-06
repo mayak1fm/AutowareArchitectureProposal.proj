@@ -13,10 +13,6 @@
 - name: Autoware (remove Multiple packages )
   command: "rm -rf {{ WORKSPACE_ROOT }}/src/description/sensor/sensor_component_description/velodyne_description"
   become: yes
-
-- name: Autoware (remove Simulator )
-  command: "rm -rf {{ WORKSPACE_ROOT }}/src/simulator"
-  become: yes
   
 - name: Autoware (rosdep install dependencies)
   command: "rosdep install -y --from-paths {{ WORKSPACE_ROOT }}/src --ignore-src --rosdistro {{ rosdistro }}"
