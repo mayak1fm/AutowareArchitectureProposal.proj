@@ -25,7 +25,7 @@ RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o
 # hadolint ignore=DL3003
 RUN --mount=type=ssh \
   mkdir -m 0600 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts \
-  && git clone git@github.com:tier4/autoware.proj.git -b main /tmp/autoware.proj \
+  && git clone git@github.com:mayak1fm/AutowareArchitectureProposal.proj.git -b main /tmp/autoware.proj \
   && cd /tmp/autoware.proj \
   && mkdir src \
   && vcs import src < autoware.proj.repos \
