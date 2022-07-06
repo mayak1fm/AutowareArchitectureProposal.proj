@@ -29,7 +29,7 @@ RUN --mount=type=ssh \
   && cd /tmp/autoware.proj \
   && mkdir src \
   && vcs import src < autoware.proj.repos \
-  ./setup_ubuntu20.04.sh -c \
+  && ./setup_ubuntu20.04.sh -c \
   && rm -rf /tmp/autoware.proj \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
